@@ -22,7 +22,7 @@ jobs:
           java-version: '21'
           cache: gradle
 
-      - uses: android-actions/setup-android@v3
+      - uses: android-actions/setup-android@v4
 
       - run: chmod +x ./gradlew
 
