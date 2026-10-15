@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nine SFZ entries over one shared sample tree. Bump the revision whenever any file under
+     assets/pack changes: saved projects pin it. -->
+<packs>
+    <pack
+        id="org.androidaudioplugin.sfz.salamander-drumkit"
+        label="Salamander Drumkit"
+        revision="1.1.0"
+        assetRoot="pack"
+        summary="Alexander Holm's Salamander Drumkit, as SFZ."
+        license="CC BY-SA 3.0">
+        <entry path="Salamander Drumkit.sfz" label="Full kit" />
+        <entry path="ALL.sfz" label="All" />
+        <entry path="crashesFX.sfz" label="Crashes / FX" />
+        <entry path="hihat.sfz" label="Hi-hat" />
+        <entry path="hitom.sfz" label="High tom" />
+        <entry path="kick.sfz" label="Kick" />
+        <entry path="lotom.sfz" label="Low tom" />
+        <entry path="ride.sfz" label="Ride" />
+        <entry path="snare.sfz" label="Snare" />
+    </pack>
+</packs>

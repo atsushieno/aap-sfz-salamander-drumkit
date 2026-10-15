@@ -7,10 +7,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".SalamanderDrumkitService" android:exported="true">
+        <!-- The soundpack contract (soundpack-provider-for-android): one public SFZ pack,
+             discoverable by its action, read straight from this APK's assets. -->
+        <provider
+            android:name="org.androidaudioplugin.soundpack.sdk.SfzAssetPackProvider"
+            android:authorities="${applicationId}.soundpack.sfz"
+            android:exported="true">
             <intent-filter>
-                <action android:name="org.androidaudioplugin.SfzResourceService.V1" />
+                <action android:name="org.androidaudioplugin.soundpack.sfz.V1" />
             </intent-filter>
-        </service>
+            <meta-data
+                android:name="org.androidaudioplugin.soundpack#Packs"
+                android:resource="@xml/soundpack_sfz" />
+        </provider>
     </application>
 </manifest>

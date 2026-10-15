@@ -6,11 +6,12 @@ android {
         applicationId 'org.androidaudioplugin.sfz.salamanderdrumkit'
         minSdk 29
         targetSdk 37
-        versionCode 1
-        versionName '1.0.0'
+        // 2.x serves the soundpack contract; 1.x served SfzResourceService.V1.
+        versionCode 2
+        versionName '2.0.0'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
-    // Every published resource must support AssetManager.openFd().
+    // Pack files are served as descriptor ranges of the APK, so nothing may be compressed.
     androidResources {
         noCompress ''
         ignoreAssetsPattern 'salamanderDrumkit'
@@ -20,10 +21,11 @@ android {
     kotlinOptions { jvmTarget = '11' }
 }
 dependencies {
-    implementation project(':sfz-provider')
+    implementation 'org.androidaudioplugin.soundpack:soundpack-provider-sdk:0.1.0-dev'
     implementation platform('androidx.compose:compose-bom:2026.04.01')
     implementation 'androidx.activity:activity-compose:1.13.0'
     implementation 'androidx.compose.material3:material3'
+    androidTestImplementation 'org.androidaudioplugin.soundpack:soundpack-testkit:0.1.0-dev'
     androidTestImplementation 'androidx.test:runner:1.7.0'
     androidTestImplementation 'junit:junit:4.13.2'
 }
